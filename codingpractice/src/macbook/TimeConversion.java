@@ -1,6 +1,6 @@
 package macbook;
  
-public class Test {
+public class TimeConversion {
     char var1;
     double var2;
     float var3;
