@@ -1,8 +1,6 @@
 package macbook;
 
 //Java code for stack implementation
-
-import java.io.*;
 import java.util.Stack;
 
 class Stack2
