@@ -3,6 +3,21 @@ package recursion.dp;
 import java.util.Scanner;
 
 public class ClimbNStairs {
+	
+	  public static int countPaths(int[] arr, int index, int len) {
+		    if (index == len) {
+		      return 1;
+		    }
+		    int count = 0;
+		    for (int jump = 1; jump <= arr[index]; jump++) {
+		      if ((jump + index) <= len) {
+		        count += countPaths(arr, jump + index, len);
+		      } else {
+		        break;
+		      }
+		    }
+		    return count;
+		  }
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -14,16 +29,8 @@ public class ClimbNStairs {
 			arr[i]= scn.nextInt();
 		}
 		
-		int[] dp = new int[n+1];
-		dp[n]=1;
-		
-		for(int i=n-1;i>=0;i--) {
-			for(int j=1;j<=arr[i] && i+j<dp.length;j++) {
-				dp[i] += dp[i+j];
-			}
-		}
-		
-		System.out.println(dp[0]);
+		int paths = countPaths(arr, 0, n);
+		System.out.println(paths);
 		scn.close();
 	}
 
