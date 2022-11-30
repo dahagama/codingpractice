@@ -25,15 +25,14 @@ public class QueueImpl {
 	}
 	
 	public void add(int data) {
-		Node node = new Node(data);
+		Node newnode = new Node(data);
 		if(tail!=null) {
-			tail.next=node;
+			tail.next=newnode;
 		}		
-		tail=node;		
+		tail=newnode;		
 		if(head==null) {
-			head=node;
-		}
-		
+			head=newnode;
+		}	
 	}
 	
 	public int remove() {
