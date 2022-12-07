@@ -18,10 +18,10 @@ class ReverseLinkedList {
     }
  
     /* Function to reverse the linked list */
-    Node reverse(Node node)
+    Node reverse(Node head)
     {
         Node prev = null;
-        Node current = node;
+        Node current = head;
         Node next = null;
         while (current != null) {
             next = current.next;
@@ -29,8 +29,8 @@ class ReverseLinkedList {
             prev = current;
             current = next;
         }
-        node = prev;
-        return node;
+        head = prev;
+        return head;
     }
  
     // prints content of double linked list
