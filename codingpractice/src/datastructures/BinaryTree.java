@@ -19,6 +19,47 @@ public class BinaryTree {
 	
 	Node root;
 	
+	
+	 /* Given a binary tree, print its nodes in inorder*/
+    void printInorder(Node root)
+    {
+        if (root == null)
+            return;
+ 
+        /* first recur on left child */
+        printInorder(root.left);
+ 
+        /* then print the data of node */
+        System.out.print(root.value + " ");
+ 
+        /* now recur on right child */
+        printInorder(root.right);
+    }
+    
+	public void preOrder(Node root) {
+		if(root==null)
+			return;
+		/* then print the data of node */
+        System.out.print(root.value + " ");
+		preOrder(root.left);
+		preOrder(root.right);
+	}
+	
+	void printPostorder(Node root)
+    {
+        if (root == null)
+            return;
+ 
+        // first recur on left subtree
+        printPostorder(root.left);
+ 
+        // then recur on right subtree
+        printPostorder(root.right);
+ 
+        // now deal with the node
+        System.out.print(root.value + " ");
+    }
+	
 	private Node addRecursive(Node current, int value) {
 	    if (current == null) {
 	        return new Node(value);
@@ -35,6 +76,8 @@ public class BinaryTree {
 
 	    return current;
 	}
+	
+
 	
 	public void add(int value) {
 	    root = addRecursive(root, value);
