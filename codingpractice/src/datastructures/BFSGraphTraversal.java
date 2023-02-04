@@ -1,12 +1,10 @@
 package datastructures;
 //Java program to print BFS traversal from a given source vertex.
 	// BFS(int s) traverses vertices reachable from s.
-	import java.io.*;
+	
 	import java.util.*;
 //Queue
 public class BFSGraphTraversal {
-
-	
 
 	// This class represents a directed graph using adjacency list
 	// representation
