@@ -8,6 +8,7 @@ public class LinkedListImpl {
 		private Node next;
 		private Node(int data) {
 			this.data=data;
+			this.next=null;
 		}
 	}
 	
@@ -39,9 +40,15 @@ public class LinkedListImpl {
 	}
 	
 	public void prepend(int data) {
-		Node newHead = new Node(data);
-		newHead.next = head;
-		head=newHead;
+		
+		Node newNode = new Node(data);
+		if(head==null) {
+			head=newNode;
+			return;
+		}
+		
+		newNode.next = head;
+		head=newNode;
 	}
 	
 	public Node deleteFromBegining(Node head) {

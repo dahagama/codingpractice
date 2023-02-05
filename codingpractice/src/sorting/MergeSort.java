@@ -48,10 +48,47 @@ public class MergeSort {
 		
 	}
 	
+	public static void mergeSortRecursive(int a[], int n) {
+		if(n<2)
+			return;
+		int i,mid=n/2;
+		int l[]= new int[mid];
+		int r[]= new int[n-mid];
+		
+		for(i=0;i<mid;i++) {
+			l[i]=a[i];
+		}
+		for(i=mid;i<n;i++) {
+			r[i-mid]=a[i];
+		}
+		mergeSortRecursive(l,mid);
+		mergeSortRecursive(r,n-mid);
+		merge(a,l,r,mid,n-mid);
+		
+	}
+	
+	static void merge(int[] a,int[] l,int[] r,int left, int right) {
+		int i=0,j=0,k=0;
+		while(i<left && j<right) {
+			if(l[i]<=r[j])
+				a[k++]=l[i++];
+			else
+				a[k++]=r[j++];
+		}
+		
+		while(i<left)
+			a[k++]=l[i++];
+		while(j<right)
+			a[k++]=r[j++];
+	}
+	
 	public static void main(String args[]) {
 		int arr[]= {2,5,0,6,9,3,12,4};
 		int b[] = new int[arr.length];
-		mergeSort(arr,b, 0, arr.length-1);
+		//mergeSort(arr,b, 0, arr.length-1);
+		//System.out.println(Arrays.toString(arr));
+		
+		mergeSortRecursive(arr,arr.length);
 		System.out.println(Arrays.toString(arr));
 		
 	}
