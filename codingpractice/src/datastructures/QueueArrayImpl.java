@@ -29,5 +29,16 @@ public class QueueArrayImpl {
 		if(front==rear)
 			front=rear=-1;
 	}
+	
+	void display() {
+		if(front==rear) {
+			System.out.println("Queue is empty");
+			return;
+		}
+		for(int i=front;i<rear;i++) {
+			System.out.println(Q[i]+" ");
+		}
+		System.out.println();
+	}
 
 }
