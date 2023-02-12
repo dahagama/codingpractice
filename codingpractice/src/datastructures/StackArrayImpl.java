@@ -78,22 +78,27 @@ public class StackArrayImpl {
 			}
 	 }
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		Scanner obj = new Scanner(System.in);
-		StackArrayImpl s = new StackArrayImpl();
-		s.push(111);
-		s.push(222);
-		s.push(333);
-		s.push(444);
-		s.push(555);
-		s.print();
-		System.out.println(s.pop());
-		s.print();
-		System.out.println(s.peek());
-		System.out.println(s.search(333));
-		System.out.println(s.search(999));
 
-	}
+	 public static void main(String[] args) 
+		{
+			Scanner obj = new Scanner(System.in);
+			StackArrayImpl s = new StackArrayImpl();
+			s.push(111);
+			s.push(222);
+			s.push(333);
+			s.push(444);
+			s.push(555);
+			s.print();
+			System.out.println(s.pop());
+			s.print();
+			System.out.println(s.peek());
+			System.out.println(s.search(333));
+			System.out.println(s.search(999));
+		}
 
 }
+
+
+	
+
+
