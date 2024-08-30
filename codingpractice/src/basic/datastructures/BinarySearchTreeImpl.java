@@ -20,6 +20,18 @@ public class BinarySearchTreeImpl {
 		System.out.println(root.key+ "");
 		inOrder(root.right);
 	}
+	
+	public boolean search(BinarySearchTreeNode root, int key) {
+		if(root == null)
+			return false;
+		
+		if(root.key == key)
+			return true;
+		if(root.key<key)
+			return search(root.right,key);
+		else
+			return search(root.left,key);
+	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
