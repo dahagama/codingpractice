@@ -32,6 +32,44 @@ public class BinarySearchTreeImpl {
 		else
 			return search(root.left,key);
 	}
+	
+	public BinarySearchTreeNode removeNode(BinarySearchTreeNode root, int val)
+    {
+        if(root == null)
+            return null;
+        if(root.key < val)
+            root.right = removeNode(root.right,val);
+        else if(root.key > val)
+            root.left = removeNode(root.left,val);
+        else
+        {
+            if(root.left == null && root.right == null)
+                return null;
+            else if(root.left == null)
+                return root.right;
+            else if(root.right == null)
+                return root.left;
+            else
+            {
+                int rightMin = getRightMin(root.right);
+                root.key = rightMin;
+                root.right = removeNode(root.right,rightMin);
+            }
+        }
+        return root;
+    }
+
+    public int getRightMin(BinarySearchTreeNode root)
+    {
+    	BinarySearchTreeNode temp = root;
+
+        while(temp.left != null)
+        {
+            temp = temp.left;
+        }
+
+        return temp.key;
+    }
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
